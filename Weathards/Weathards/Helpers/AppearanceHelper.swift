@@ -6,9 +6,21 @@
 //
 
 import Foundation
-import  SwiftUI
+import SwiftUI
+
+struct Theme {
+    /// Name of background image
+    var background: String
+    /// Background color of elements on home screen
+    var color: Color
+    /// Text color
+    var textColor: Color
+    /// Color of icons on home screen
+    var iconColor: Color
+}
 
 enum Appearance {
+    // TODO: add undefined case (when not loaded)
     case clearSkySummerDay
     case clearSkySummerNight
     case clearSkyWinterDay
@@ -18,43 +30,96 @@ enum Appearance {
     case snowDay
     case snowNight
     case thunderstorm
-    case cloudsSummerDay
-    case cloudsSummerNight
+    case cloudsDay
+    case cloudsNight
     case fogDay
     case fogNight
     case mistDay
     case mistNight
     
-    var theme: (background: String, color: Color, textColor: Color) {
+    var theme: Theme {
         switch self {
         case .clearSkySummerDay:
-            return ("dawn_clearSky", Color.black.opacity(0.3), .white)
-         case .clearSkySummerNight,
-             .clearSkyWinterDay,
-             .clearSkyWinterNight:
-            return ("night_alt_clearSky", Color.black.opacity(0.3), .white)
+            return Theme(background: (["clear sky day alt", "clear sky day"].randomElement()) ?? "clear sky day alt",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
+        case .clearSkySummerNight:
+            return Theme(background: (["clear sky night alt", "clear night day"].randomElement()) ?? "clear sky night alt",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
+        case .clearSkyWinterDay,
+                .clearSkyWinterNight:
+            return Theme(background: "clear sky night",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .rainDay,
-             .rainNight:
-            return ("rain_night", Color.white.opacity(0.3), .white)
+                .rainNight:
+            return Theme(background: "rain night",
+                         color: Color.white.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .snowDay:
-            return ("snow_day", Color.white.opacity(0.3), .white)
+            return Theme(background: "snow day",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .snowNight:
-            return ("snow_night", Color.white.opacity(0.3), .white)
+            return Theme(background: "snow night",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .thunderstorm:
-            return ("night_alt_clearSky", Color.black.opacity(0.3), .white)
-        case .cloudsSummerDay:
-            return ("clouds_day", Color.black.opacity(0.3), .white)
-        case .cloudsSummerNight:
-            return ("night_clearSky", Color.black.opacity(0.3), .white)
+            return Theme(background: "thunderstorm day",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
+        case .cloudsDay:
+            return Theme(background: "clouds day",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
+        case .cloudsNight:
+            return Theme(background: "clear sky night alt",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .fogDay,
-             .fogNight:
-            return ("night_fog", Color.white.opacity(0.3), .white)
+                .fogNight:
+            return Theme(background: "fog night",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .mistDay:
-            return ("mist_day", Color.white.opacity(0.3), .white)
+            return Theme(background: "mist day",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         case .mistNight:
-            return ("mist_night", Color.white.opacity(0.3), .white)
+            return Theme(background: "mist night",
+                         color: Color.black.opacity(0.3),
+                         textColor: .white,
+                         iconColor: .white)
         }
     }
     
-   
+    static func getAppearanceFor(_ weather: WeatherDescription, date: Date) -> Appearance {
+        let hour = Calendar.current.component(.hour, from: date)
+        let weatherGroup = weather.group
+        
+        switch (hour, weatherGroup) {
+        case (6...18, .clearSky):
+            return .clearSkySummerDay
+        case (0...6, .clearSky),
+            (18...24, .clearSky):
+            return .clearSkySummerNight
+        case (0...6, .clouds),
+            (18...24, .clouds):
+            return .cloudsNight
+        default:
+            return .cloudsDay
+        }
+    }
 }

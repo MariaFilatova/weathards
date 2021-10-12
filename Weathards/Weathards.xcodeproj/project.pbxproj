@@ -306,8 +306,8 @@
 		8039CA2D271435E300546CDD /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				8039CA2F271435E300546CDD /* SettingsView.swift */,
 				8039CA30271435E300546CDD /* HomeView.swift */,
+				8039CA2F271435E300546CDD /* SettingsView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -345,8 +345,8 @@
 		8039CA5D271435EB00546CDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8039CA5E271435EB00546CDD /* Backgrounds.xcassets */,
 				8039CA5F271435EB00546CDD /* Assets.xcassets */,
+				8039CA5E271435EB00546CDD /* Backgrounds.xcassets */,
 				8039CA60271435EB00546CDD /* Fonts */,
 			);
 			path = Resources;

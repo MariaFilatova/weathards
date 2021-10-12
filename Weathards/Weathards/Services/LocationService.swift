@@ -16,7 +16,7 @@ class LocationService {
         return CLLocationManager.locationServicesEnabled()
     }
     
-    func getLocationFor(city: String, completionHandler: @escaping (_ latitude: Double, _ longitude: Double) -> ()) {
+    func getLocationFor(_ city: String, completionHandler: @escaping (_ latitude: Double, _ longitude: Double) -> ()) {
         CLGeocoder().geocodeAddressString(city) { placemarks, error in
             if
                 error == nil,
