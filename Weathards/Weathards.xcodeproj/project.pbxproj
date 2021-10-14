@@ -55,6 +55,8 @@
 		8039CA83271435EB00546CDD /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8039CA6F271435EB00546CDD /* Poppins-Thin.ttf */; };
 		8039CA84271435EB00546CDD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8039CA70271435EB00546CDD /* Poppins-SemiBold.ttf */; };
 		8039CA88271435F300546CDD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8039CA87271435F300546CDD /* Launch Screen.storyboard */; };
+		8065A91D2718226B00354654 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065A91C2718226B00354654 /* SearchBar.swift */; };
+		8065A920271826CF00354654 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065A91F271826CF00354654 /* SettingsViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		8039CA6F271435EB00546CDD /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		8039CA70271435EB00546CDD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		8039CA87271435F300546CDD /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8065A91C2718226B00354654 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		8065A91F271826CF00354654 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +291,7 @@
 			children = (
 				8039CA23271435E300546CDD /* HomeViewViewModel.swift */,
 				8039CA24271435E300546CDD /* DailyWeatherViewItem.swift */,
+				8065A91F271826CF00354654 /* SettingsViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -294,11 +299,8 @@
 		8039CA28271435E300546CDD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8065A91E2718227700354654 /* Controls */,
 				8039CA2D271435E300546CDD /* Pages */,
-				8039CA29271435E300546CDD /* DayWeatherView.swift */,
-				8039CA2A271435E300546CDD /* CurrentWeatherView.swift */,
-				8039CA2B271435E300546CDD /* Texts.swift */,
-				8039CA2C271435E300546CDD /* Images.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +368,18 @@
 				8039CA70271435EB00546CDD /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8065A91E2718227700354654 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				8039CA2A271435E300546CDD /* CurrentWeatherView.swift */,
+				8039CA29271435E300546CDD /* DayWeatherView.swift */,
+				8039CA2B271435E300546CDD /* Texts.swift */,
+				8039CA2C271435E300546CDD /* Images.swift */,
+				8065A91C2718226B00354654 /* SearchBar.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +527,7 @@
 				8039CA47271435E300546CDD /* OpenWeatherService.swift in Sources */,
 				8039CA55271435E300546CDD /* Temperature.swift in Sources */,
 				8039CA41271435E300546CDD /* NetworkRouter.swift in Sources */,
+				8065A920271826CF00354654 /* SettingsViewViewModel.swift in Sources */,
 				8039CA57271435E300546CDD /* DailyWeather.swift in Sources */,
 				8039CA43271435E300546CDD /* HttpMethod.swift in Sources */,
 				8039CA3E271435E300546CDD /* NetworkRequestError.swift in Sources */,
@@ -523,6 +538,7 @@
 				8039CA42271435E300546CDD /* HttpTask.swift in Sources */,
 				8039CA4E271435E300546CDD /* CurrentWeatherView.swift in Sources */,
 				8039CA54271435E300546CDD /* WeatherDescription.swift in Sources */,
+				8065A91D2718226B00354654 /* SearchBar.swift in Sources */,
 				8039CA3F271435E300546CDD /* URLParametersEncoder.swift in Sources */,
 				8039CA53271435E300546CDD /* HomeView.swift in Sources */,
 				8039CA4D271435E300546CDD /* DayWeatherView.swift in Sources */,

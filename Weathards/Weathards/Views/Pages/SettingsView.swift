@@ -10,35 +10,79 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
-    //@StateObject var viewModel = SettingsViewViewModel()
+    @StateObject var viewModel = SettingsViewViewModel()
+    var appearance: Appearance
+    @State private var selectedDegeree = "°C"
+    var degrees = ["°C", "°F"]
+    @State private var selectedWindSpeed = "m/s"
+    var windSpeed = ["km/h", "m/s"]
     
     var body: some View {
-        ZStack {
-            Color.accentColor.edgesIgnoringSafeArea(.all)
             VStack {
-                TitleText(text: "Settings", textColor: .white)
+                ZStack {
+                    Image("city")
+                        .resizable()
+                        .scaledToFill()
+                    Color.black.opacity(0.8)
+                    HStack {
+                        HeadlineText(text: "City", textColor: .white).padding()
+                        TitleText(text: "Minsk", textColor: .gray).padding()
+                        Image("search")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .frame(width: 40, height: 40, alignment: .center).padding()
+                    }
+                    .background(Color.gray.opacity(0.25))
+                    .cornerRadius(15)
+                }
+                .frame(width: UIScreen.main.bounds.size.width, height: 300)
+                .cornerRadius(15)
+                HStack(spacing: 8) {
+                    SubtitleText(text: "Degrees", textColor: .white)
+                        .padding(EdgeInsets(top: 6, leading: 24, bottom: 6, trailing: 24))
+                    Spacer()
+                    Picker("Degrees", selection: $selectedDegeree) {
+                        ForEach(degrees, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
                     .padding()
-                HStack {
-                    BodyText(text: "City", textColor: .white)
-                    Spacer()
-                    BodyText(text: "Minsk", textColor: .gray)
+                    .frame(width: 160)
+                    .colorMultiply(.gray)
+                    .colorInvert()
                 }
-                Divider()
-                HStack {
-                    BodyText(text: "Measurements", textColor: .white)
+                .background(Color.gray.opacity(0.15))
+                .cornerRadius(15)
+                .padding()
+                HStack(spacing: 8) {
+                    SubtitleText(text: "Wind Speed", textColor: .white)
+                        .padding(EdgeInsets(top: 6, leading: 24, bottom: 6, trailing: 24))
                     Spacer()
-                    BodyText(text: "°C", textColor: .gray)
+                    Picker("Wind Speed", selection: $selectedWindSpeed) {
+                        ForEach(windSpeed, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding()
+                    .frame(width: 160)
+                    .colorMultiply(.gray)
+                    .colorInvert()
                 }
-                Divider()
+                .background(Color.gray.opacity(0.15))
+                .cornerRadius(15)
+                .padding()
                 Spacer()
             }
-            .padding()
+            // TODO: add color for current appearance
+            .background(Color.black)
+            .ignoresSafeArea(.all, edges: .all)
         }
-    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(appearance: .fogDay)
     }
 }

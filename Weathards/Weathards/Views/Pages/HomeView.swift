@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @StateObject var viewModel = HomeViewViewModel()
     @State private var showSettings = false
     @State private var animate = false
@@ -36,17 +35,17 @@ struct HomeView: View {
                             Button(action: { self.showSettings.toggle() } ) {
                                 Image("settings")
                                     .resizable()
-                                    .foregroundColor(.white)
+                                    .foregroundColor(viewModel.appearance.theme.iconColor)
                                     .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             }
-                            .sheet(isPresented: $showSettings) { SettingsView() }
+                            .sheet(isPresented: $showSettings) { SettingsView(appearance: viewModel.appearance) }
                             Button(action: { self.showSettings.toggle() } ) {
                                 Image("award")
                                     .resizable()
-                                    .foregroundColor(.white)
+                                    .foregroundColor(viewModel.appearance.theme.iconColor)
                                     .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             }
-                            .sheet(isPresented: $showSettings) { SettingsView() }
+                            .sheet(isPresented: $showSettings) { SettingsView(appearance: viewModel.appearance) }
                         }
                         .padding(EdgeInsets(top: UIHelper.statusBarHeight() + 16,
                                             leading: 0,

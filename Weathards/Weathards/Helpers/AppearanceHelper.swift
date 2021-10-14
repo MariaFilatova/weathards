@@ -78,9 +78,9 @@ enum Appearance {
                          iconColor: .white)
         case .cloudsDay:
             return Theme(background: "clouds day",
-                         color: Color.black.opacity(0.3),
+                         color: Color.black.opacity(0.5),
                          textColor: .white,
-                         iconColor: .white)
+                         iconColor: .black)
         case .cloudsNight:
             return Theme(background: "clear sky night alt",
                          color: Color.black.opacity(0.3),
