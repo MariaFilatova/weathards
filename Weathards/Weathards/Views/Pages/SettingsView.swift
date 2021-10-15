@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State private var showCitySearch = false
     @StateObject var viewModel = SettingsViewViewModel()
     var appearance: Appearance
     @State private var selectedDegeree = "°C"
@@ -27,10 +28,14 @@ struct SettingsView: View {
                     HStack {
                         HeadlineText(text: "City", textColor: .white).padding()
                         TitleText(text: "Minsk", textColor: .gray).padding()
-                        Image("search")
-                            .resizable()
-                            .foregroundColor(.white)
-                            .frame(width: 40, height: 40, alignment: .center).padding()
+                        Button(action: { self.showCitySearch.toggle() } ) {
+                            Image("search")
+                                .resizable()
+                                .foregroundColor(.white)
+                                .frame(width: 48, height: 48, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        }.padding()
+                        .sheet(isPresented: $showCitySearch) { CitySelectionView() }
+                        
                     }
                     .background(Color.gray.opacity(0.25))
                     .cornerRadius(15)

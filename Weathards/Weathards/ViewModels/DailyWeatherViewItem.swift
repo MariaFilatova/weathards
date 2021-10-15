@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DailyWeatherViewItem: Identifiable {
+final class DailyWeatherViewItem: Identifiable {
     
     var dailyWeather: DailyWeather?
     

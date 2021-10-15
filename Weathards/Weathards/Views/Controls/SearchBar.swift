@@ -15,11 +15,29 @@ struct SearchBar: View {
     var body: some View {
         HStack {
  
-            TextField("Search ...", text: $text)
+            TextField("Search city", text: $text)
                 .padding(7)
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+                .background(Color(.systemGray2))
                 .cornerRadius(8)
+                .overlay(
+                    HStack {
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.white)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 8)
+                        
+                        if isEditing {
+                            Button(action: {
+                                self.text = ""
+                            }) {
+                                Image(systemName: "multiply.circle.fill")
+                                    .foregroundColor(.gray)
+                                    .padding(.trailing, 8)
+                            }
+                        }
+                    }
+                )
                 .padding(.horizontal, 10)
                 .onTapGesture {
                     self.isEditing = true
@@ -31,7 +49,7 @@ struct SearchBar: View {
                     self.text = ""
  
                 }) {
-                    Text("Cancel")
+                    BodyText(text: "Cancel", textColor: .white)
                 }
                 .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
