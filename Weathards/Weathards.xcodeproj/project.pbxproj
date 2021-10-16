@@ -57,6 +57,8 @@
 		8039CA88271435F300546CDD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8039CA87271435F300546CDD /* Launch Screen.storyboard */; };
 		8065A91D2718226B00354654 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065A91C2718226B00354654 /* SearchBar.swift */; };
 		8065A920271826CF00354654 /* SettingsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065A91F271826CF00354654 /* SettingsViewViewModel.swift */; };
+		80956BA9271ADDE60057E846 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 80956BA8271ADDE60057E846 /* cities.json */; };
+		80956BAB271ADF0D0057E846 /* JSONReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80956BAA271ADF0D0057E846 /* JSONReaderService.swift */; };
 		80C94496271894B300FBEEB1 /* CitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C94495271894B300FBEEB1 /* CitySelectionView.swift */; };
 		80C944982719D3AD00FBEEB1 /* CitySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C944972719D3AD00FBEEB1 /* CitySelectionViewModel.swift */; };
 		80C9449A2719D77100FBEEB1 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C944992719D77100FBEEB1 /* City.swift */; };
@@ -137,6 +139,8 @@
 		8039CA87271435F300546CDD /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8065A91C2718226B00354654 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8065A91F271826CF00354654 /* SettingsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewViewModel.swift; sourceTree = "<group>"; };
+		80956BA8271ADDE60057E846 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		80956BAA271ADF0D0057E846 /* JSONReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReaderService.swift; sourceTree = "<group>"; };
 		80C94495271894B300FBEEB1 /* CitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionView.swift; sourceTree = "<group>"; };
 		80C944972719D3AD00FBEEB1 /* CitySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySelectionViewModel.swift; sourceTree = "<group>"; };
 		80C944992719D77100FBEEB1 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				8039CA0A271435D600546CDD /* LocationService.swift */,
+				80956BAA271ADF0D0057E846 /* JSONReaderService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 		8039CA5D271435EB00546CDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80956BA8271ADDE60057E846 /* cities.json */,
 				8039CA5F271435EB00546CDD /* Assets.xcassets */,
 				8039CA5E271435EB00546CDD /* Backgrounds.xcassets */,
 				8039CA60271435EB00546CDD /* Fonts */,
@@ -501,6 +507,7 @@
 				8039CA75271435EB00546CDD /* Poppins-ExtraLight.ttf in Resources */,
 				8039CA79271435EB00546CDD /* Poppins-Light.ttf in Resources */,
 				8039CA84271435EB00546CDD /* Poppins-SemiBold.ttf in Resources */,
+				80956BA9271ADDE60057E846 /* cities.json in Resources */,
 				8039C9E6271435C200546CDD /* Preview Assets.xcassets in Resources */,
 				8039CA82271435EB00546CDD /* Poppins-Black.ttf in Resources */,
 				8039CA7F271435EB00546CDD /* Poppins-Regular.ttf in Resources */,
@@ -540,6 +547,7 @@
 				8039CA55271435E300546CDD /* Temperature.swift in Sources */,
 				80C94496271894B300FBEEB1 /* CitySelectionView.swift in Sources */,
 				80C944982719D3AD00FBEEB1 /* CitySelectionViewModel.swift in Sources */,
+				80956BAB271ADF0D0057E846 /* JSONReaderService.swift in Sources */,
 				8039CA41271435E300546CDD /* NetworkRouter.swift in Sources */,
 				8065A920271826CF00354654 /* SettingsViewViewModel.swift in Sources */,
 				8039CA57271435E300546CDD /* DailyWeather.swift in Sources */,

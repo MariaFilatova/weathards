@@ -20,7 +20,7 @@ struct CitySelectionView: View {
     
     var body: some View {
         VStack {
-            VStack {
+            LazyVStack {
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: UIHelper.statusBarHeight() + 10,
                                         leading: 16,
