@@ -13,9 +13,10 @@ final class HomeViewViewModel: ObservableObject {
     @Published var weather: WeatherForecast = WeatherForecast(current: nil, hourly: nil, daily: nil)
     @Published var appearance: Appearance = .cloudsNight
     // TODO: read saved city from user defaults
-    @Published var city: String = "Zhodzina"
+    @Published var city: String
     
     init() {
+        city = UserDefaulsService.shared.getCity()
         fetchWeather()
     }
     

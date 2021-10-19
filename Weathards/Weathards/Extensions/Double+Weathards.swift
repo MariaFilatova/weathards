@@ -1,5 +1,5 @@
 //
-//  Double+WeatherApp.swift
+//  Double+Weathards.swift
 //  WeatherApp
 //
 //  Created by Waind Storm on 26.09.21.

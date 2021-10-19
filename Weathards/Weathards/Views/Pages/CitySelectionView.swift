@@ -30,7 +30,11 @@ struct CitySelectionView: View {
             .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.133))
             Spacer()
             List(viewModel.cityList.filter({ searchText.isEmpty ? true : $0.name.contains(searchText) })) { item in
-                CityRow(name: "\(item.name), \(item.country)")
+                Button(action: {
+                    self.viewModel.selectedCity = item
+                }) {
+                    CityRow(name: "\(item.name), \(item.country)")
+                }
             }
         }
         .background(Color.black)

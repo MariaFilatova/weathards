@@ -1,5 +1,5 @@
 //
-//  Font+WeatherApp.swift
+//  Font+Weathards.swift
 //  WeatherApp
 //
 //  Created by Waind Storm on 9.10.21.

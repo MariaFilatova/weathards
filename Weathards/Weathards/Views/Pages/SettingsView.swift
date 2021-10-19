@@ -27,7 +27,7 @@ struct SettingsView: View {
                     Color.black.opacity(0.8)
                     HStack {
                         HeadlineText(text: "City", textColor: .white).padding()
-                        TitleText(text: "Minsk", textColor: .gray).padding()
+                        TitleText(text: viewModel.city, textColor: .gray).padding()
                         Button(action: { self.showCitySearch.toggle() } ) {
                             Image("search")
                                 .resizable()

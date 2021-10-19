@@ -9,4 +9,9 @@ import SwiftUI
 import CoreLocation
 
 final class SettingsViewViewModel: ObservableObject {
+    @Published var city: String
+    
+    init() {
+        city = UserDefaulsService.shared.getCity()
+    }
 }
